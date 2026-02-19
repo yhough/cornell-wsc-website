@@ -157,10 +157,9 @@ h1 {
 /* VIDEO! */
 .video-background {
   position: relative;
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   overflow: hidden;
-  /* Hide any overflow */
   background-size: cover;
 }
 
@@ -175,8 +174,20 @@ h1 {
   z-index: -1;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  /* Ensure the video covers the entire container */
+}
+
+.yt-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh; /* 16/9 * 100vh */
+  height: 56.25vw; /* 9/16 * 100vw */
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
   z-index: -1;
+  pointer-events: none;
+  border: none;
 }
 
 .video-background::before {
