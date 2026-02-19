@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quant</title>
+  <link rel="icon" href="favicon.ico" type="image/favicon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="quant-particles.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .social-icons a:hover {
+      color: #f1c046;
+    }
+  </style>
+</head>
+
+<body class="quant-body">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top quant-navbar">
+    <a class="navbar-brand" href="index.html">
+      <img src="./images/logo-white.svg" height="50" alt="Logo" />
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link sans-regular" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sans-regular" href="eboard.html">Executive Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sans-regular" href="recruitment.html">Recruitment Timeline</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sans-regular" href="quant.html">Quant</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="image-background" style="background-image: url('images/cornell6.jpg')">
+    <h1 class="serif-regular fade-in">Quantitative Finance</h1>
+  </div>
+
+  <section id="eboard" style="background-color: black;">
+    <div class="container">
+      <div id="quant-we-offer" class="row">
+        <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('paul')">
+          <div class="member" style="background-color: transparent; color: white">
+            <img src="images/people/paul-iacobucci.jpg" alt="Cornell Portfolio Management Club Logo" class="member-pic" />
+            <h3>Paul Iacobucci</h3>
+            <p class="member-description">Head of Quantitative Finance</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('gabriel')">
+          <div class="member" style="background-color: transparent; color: white">
+            <img src="images/people/gabriel-castillo.jpg" alt="Cornell Portfolio Management Club Logo" class="member-pic" />
+            <h3>Gabriel Castillo</h3>
+            <p class="member-description">Lead Quantitative Developer</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('akhil')">
+          <div class="member" style="background-color: transparent; color: white">
+            <img src="images/people/akhil-kagithapu.jpg" alt="Cornell Portfolio Management Club Logo" class="member-pic" />
+            <h3>Akhil Kagithapu</h3>
+            <p class="member-description">Lead Quantitative Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- WHAT WE OFFER SECTION -->
+  <section id="quant-we-offer" class="text-center">
+    <h2 class="serif-regular mb-5 fade-in">Welcome!</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-6 fade-in">
+        <i class="fa-solid fa-circle-info fa-4x mb-4"></i>
+        <h3 class="mb-2 serif-regular">Expectations</h3>
+        <div class="sans-serif-light">
+          <p>
+            As a Quantitative Developer for CPMC, you will be expected
+            to attend weekly meetings and contribute to a semester-long project.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 fade-in">
+        <i class="fas fa-briefcase fa-4x mb-4"></i>
+        <h3 class="mb-2 serif-regular">Meetings</h3>
+        <div class="sans-serif-light">
+          <p>
+            At meetings we will provide guidance for your projects, learn with eachother,
+            and challenge you to think outside the box. We will provide food and may occasionally
+            have guests from the industry.
+
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 fade-in">
+        <i class="fa-solid fa-lightbulb fa-4x mb-4"></i>
+        <h3 class="mb-2 serif-regular">Learning</h3>
+        <div class="sans-serif-light">
+          <p>
+            We strongly encourage members to learn programming
+            languages like C++, Rust, and Python. We will explore many Machine Learning libraries
+            available to you, which we will provide online resources for.
+          </p>
+        </div>
+        <div class="icon-container">
+          <i class="fa-brands fa-rust custom-size"></i>
+          <i class="fa-brands fa-python custom-size"></i>
+          <img src="images/cplusplus-icon.svg" alt="C++" class="img-fluid custom-size">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER WITH PARTICLES -->
+  <footer class="sans-regula quant-footer">
+    <div class="footer-content fade-in">
+      <p>&copy; 2024 Cornell Portfolio Management Club</p>
+      <p>
+        This organization is a registered student organization of Cornell
+        University
+      </p>
+      
+      <a onclick="javascript: window.location = 'https://www.cornellportfoliomanagement.com/egg.html';">
+        <img src="images/egg.png" alt="Egg Image" 
+            id="eggImage">
+    </a>
+
+      <!-- Social Media Links -->
+      <div class="social-icons">
+        <a href="https://www.instagram.com/cornellportfoliomanagementclub/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/cornell-portfolio-management-club/" target="_blank"
+          aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup">
+    <div class="popup-content quant-popup">
+      <span class="close-btn" onclick="hidePopup()">&times;</span>
+      <img id="popup-image" src="images/filler.png" alt="" class="popup-image" />
+      <h3 id="member-name"></h3>
+      <p id="member-info"></p>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      });
+
+      document.querySelectorAll('.fade-in').forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

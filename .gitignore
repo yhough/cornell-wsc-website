@@ -1,0 +1,9 @@
+# Large video files (too big for GitHub — host separately)
+*.mp4
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.cursor/

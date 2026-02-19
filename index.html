@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cornell Wall Street Club</title>
+    <link rel="icon" href="favicon.ico" type="image/favicon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="particle-script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/logo-full.svg" height="50" alt="Logo" />
+      </a>
+      <button
+        class="navbar-toggler custom-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="eboard.html"
+              >Executive Board</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="recruitment.html"
+              >Recruitment Timeline</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="quant.html">Quant</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Video Background Section -->
+    <div
+      class="video-background d-flex align-items-center justify-content-center position-relative"
+    >
+      <video autoplay muted loop>
+        <source src="images/LOOP-BACKGROUND.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="content-center text-center position-absolute w-100">
+        <h2 class="sans-light fade-in">
+          Cornell's Premier Finance Organization
+        </h2>
+        <h1 class="serif-regular fade-in">Cornell Wall Street Club</h1>
+        <button
+          type="button"
+          id="coffeeChatButton"
+          class="btn btn-outline-light btn-lg mt-4 manrope-light fade-in"
+        >
+          Request Coffee Chat
+        </button>
+      </div>
+
+      <div class="scroll-down position-absolute fade-in" style="bottom: 20px">
+        <img src="images/chevron-down.svg" alt="Scroll Down" />
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-4 fade-in">
+          <i class="fas fa-university fa-5x mb-4"></i>
+          <h2 class="mb-4 serif-regular">About Us</h2>
+          <div class="sans-serif-light">
+            <p>
+              The Cornell Portfolio Management Club (CPMC) is a student-led
+              organization dedicated to providing members with a comprehensive
+              understanding of investment strategies, portfolio management, and
+              the financial markets.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4 mission-section fade-in">
+          <i class="fas fa-bullseye fa-5x mb-4"></i>
+          <h2 class="mb-4 serif-regular">Our Mission</h2>
+          <div class="sans-serif-light">
+            <p>
+              Our mission is to equip students with practical investment
+              knowledge and hands-on experience. We bridge the gap between
+              academic theory and professional practice, preparing members for
+              successful careers in finance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE OFFER SECTION -->
+    <section id="what-we-offer" class="text-center">
+      <h2 class="serif-regular mb-5 fade-in">What We Offer</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-6 fade-in">
+          <i class="fas fa-money-bill fa-4x mb-4"></i>
+          <h3 class="mb-2 serif-regular">Investment Education</h3>
+          <div class="sans-serif-light">
+            <p>
+              We provide in-depth educational resources and workshops focused on
+              investment strategies, financial analysis, and portfolio
+              management. Our goal is to equip our members with the tools they
+              need to make informed investment decisions.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 fade-in">
+          <i class="fas fa-briefcase fa-4x mb-4"></i>
+          <h3 class="mb-2 serif-regular">Portfolio Management Experience</h3>
+          <div class="sans-serif-light">
+            <p>
+              Through hands-on projects and real-world simulations, we give our
+              members the opportunity to manage actual portfolios. This
+              experience allows students to apply what they have learned in a
+              practical and impactful way.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 fade-in">
+          <i class="fas fa-globe fa-4x mb-4"></i>
+          <h3 class="mb-2 serif-regular">Networking Opportunities</h3>
+          <div class="sans-serif-light">
+            <p>
+              We host events such as speaker sessions, networking mixers, and
+              career panels where students can meet professionals in the finance
+              industry. These events allow our members to connect with top
+              executives, financial analysts, and recruiters from prestigious
+              firms.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 fade-in">
+          <i class="fas fa-file-alt fa-4x mb-4"></i>
+          <h3 class="mb-2 serif-regular">
+            Resume Building & Career Development
+          </h3>
+          <div class="sans-serif-light">
+            <p>
+              We offer resume workshops, mock interviews, and career development
+              sessions tailored to those pursuing careers in finance. We help
+              our members refine their resumes, improve interview skills, and
+              increase their job prospects in finance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER WITH PARTICLES -->
+    <footer class="sans-regular">
+      <div class="footer-content fade-in">
+        <p>&copy; 2024 Cornell Portfolio Management Club</p>
+        <p>
+          This organization is a registered student organization of Cornell
+          University
+        </p>
+
+        <!-- Social Media Links -->
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/cornellportfoliomanagementclub/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/cornell-portfolio-management-club/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        });
+
+        document.querySelectorAll('.fade-in').forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

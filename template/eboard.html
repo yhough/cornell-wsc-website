@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive Board</title>
+    <link rel="icon" href="favicon.ico" type="image/favicon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="particle-script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/logo-full.svg" height="50" alt="Logo" />
+      </a>
+      <button
+        class="navbar-toggler custom-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="eboard.html"
+              >Executive Board</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="recruitment.html"
+              >Recruitment Timeline</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sans-regular" href="quant.html">Quant</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="image-background"
+      style="background-image: url('images/cornell5.jpg')"
+    >
+      <h1 class="serif-regular fade-in">Executive Board</h1>
+    </div>
+        <section id="eboard">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('alex')">
+            <div class="member">
+              <img
+                src="images/people/alex-smith.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Alex Smith</h3>
+              <p class="member-description">President</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('haiar')">
+            <div class="member">
+              <img
+                src="images/people/haiar-isliamov.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Haiar Isliamov</h3>
+              <p class="member-description">Vice President</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('paul')">
+            <div class="member">
+              <img
+                src="images/people/paul-iacobucci.jpg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Paul Iacobucci</h3>
+              <p class="member-description">VP of Technology, Head of Quant</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('dennis')">
+            <div class="member">
+              <img
+                src="images/people/dennis-voloshko.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Dennis Voloshko</h3>
+              <p class="member-description">Treasurer</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('james')">
+            <div class="member">
+              <img
+                src="images/people/james-lynch.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>James Lynch</h3>
+              <p class="member-description">VP of Investments</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('julio')">
+            <div class="member">
+              <img
+                src="images/people/julio-kutrolli.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Julio Kutrolli</h3>
+              <p class="member-description">VP of Outreach</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('thomas')">
+            <div class="member">
+              <img
+                src="images/people/thomas-vogeley.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Thomas Vogeley</h3>
+              <p class="member-description">VP of DEI</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('daniel')">
+            <div class="member">
+              <img
+                src="images/people/daniel-bitensky.jpeg"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Daniel Bitensky</h3>
+              <p class="member-description">VP of Events</p>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('member9')">
+            <div class="member">
+              <img
+                src="images/filler.png"
+                alt="Cornell Portfolio Management Club Logo"
+                class="member-pic"
+              />
+              <h3>Member 9</h3>
+              <p class="member-description">Job Class of 2020 this is very very long</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER WITH PARTICLES -->
+    <footer class="sans-regular">
+      <div class="footer-content fade-in">
+        <p>&copy; 2024 Cornell Portfolio Management Club</p>
+        <p>
+          This organization is a registered student organization of Cornell
+          University
+        </p>
+
+        <!-- Social Media Links -->
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/cornellportfoliomanagementclub/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/cornell-portfolio-management-club/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <img
+          id="popup-image"
+          src="images/filler.png"
+          alt=""
+          class="popup-image"
+        />
+        <h3 id="member-name"></h3>
+        <p id="member-info"></p>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        });
+
+        document.querySelectorAll('.fade-in').forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
