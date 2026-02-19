@@ -3,51 +3,230 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recruitment</title>
+    <title>Recruitment — Cornell Wall Street Club</title>
     <link rel="icon" href="favicon.ico" type="image/favicon" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="particle-script.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="colors.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+      body { background-color: var(--color-black); }
+
+      /* HERO */
+      .recruit-hero {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        padding: 12rem 2rem 7rem;
+        text-align: center;
+      }
+
+      .recruit-hero .eyebrow {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 1rem;
+      }
+
+      .recruit-hero h1 {
+        font-size: 4rem;
+        color: var(--color-white);
+        text-shadow: none;
+        margin-bottom: 1.25rem;
+        line-height: 1.1;
+      }
+
+      .recruit-hero p {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 200;
+        font-size: 1.1rem;
+        opacity: 0.55;
+        max-width: 520px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
+      }
+
+      .notify-form {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .notify-form input[type="email"] {
+        background: transparent;
+        border: 0.09rem solid rgba(255, 250, 250, 0.25);
+        border-radius: 6px;
+        color: var(--color-white);
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.9rem;
+        padding: 0.65rem 1.25rem;
+        width: 280px;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .notify-form input[type="email"]::placeholder { color: rgba(255,250,250,0.3); }
+      .notify-form input[type="email"]:focus { border-color: var(--color-red); }
+
+      .notify-form button {
+        background-color: var(--color-red);
+        color: var(--color-white);
+        border: none;
+        border-radius: 6px;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 400;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        padding: 0.65rem 1.75rem;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .notify-form button:hover { opacity: 0.85; }
+
+      /* DIVIDER */
+      .divider {
+        width: 1px;
+        height: 80px;
+        background: linear-gradient(to bottom, transparent, rgba(255,250,250,0.2), transparent);
+        margin: 0 auto;
+      }
+
+      /* WHAT TO EXPECT */
+      #what-to-expect {
+        background-color: var(--color-black);
+        padding: 5rem 2rem 7rem;
+      }
+
+      #what-to-expect .section-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      #what-to-expect .section-label {
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.5rem;
+      }
+
+      #what-to-expect h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: var(--color-white);
+        margin-bottom: 4rem;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .step {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+        padding: 2.25rem 0;
+        border-top: 0.09rem solid rgba(255, 250, 250, 0.08);
+      }
+
+      .step:last-child {
+        border-bottom: 0.09rem solid rgba(255, 250, 250, 0.08);
+      }
+
+      .step-number {
+        font-family: 'Baskerville', serif;
+        font-style: italic;
+        font-size: 2rem;
+        color: var(--color-red);
+        opacity: 0.5;
+        flex-shrink: 0;
+        width: 2.5rem;
+        line-height: 1;
+        padding-top: 0.1rem;
+      }
+
+      .step-content h3 {
+        font-family: 'Baskerville', serif;
+        font-size: 1.2rem;
+        color: var(--color-white);
+        margin-bottom: 0.35rem;
+      }
+
+      .step-content p {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--color-white);
+        opacity: 0.5;
+        margin: 0;
+      }
+
+      /* COMING SOON BADGE */
+      .coming-soon {
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      .coming-soon .badge-pill {
+        display: inline-block;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        border: 0.09rem solid var(--color-red);
+        border-radius: 20px;
+        padding: 0.35rem 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .coming-soon p {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 200;
+        font-size: 0.9rem;
+        color: var(--color-white);
+        opacity: 0.4;
+        letter-spacing: 0.04em;
+      }
+
+      @media (max-width: 576px) {
+        .recruit-hero h1 { font-size: 2.8rem; }
+        .notify-form { flex-direction: column; align-items: center; }
+        .notify-form input[type="email"] { width: 100%; max-width: 320px; }
+        .step { gap: 1.5rem; }
+      }
+    </style>
   </head>
+
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <a class="navbar-brand" href="index.html">
         <img src="./images/logo-full.svg" height="50" alt="Logo" />
       </a>
-      <button
-        class="navbar-toggler custom-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="about.html">About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="about.html">About</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link sans-regular dropdown-toggle" href="#" id="teamDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Team</a>
             <div class="dropdown-menu" aria-labelledby="teamDropdown">
@@ -55,152 +234,96 @@
               <a class="dropdown-item sans-regular" href="mentors.html">Mentors</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="recruitment.html">Recruitment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="members-only.html">Members Only</a>
-          </li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="recruitment.html">Recruitment</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="members-only.html">Members Only</a></li>
         </ul>
       </div>
     </nav>
 
-    <div
-      class="image-background"
-      style="background-image: url('images/cornell4.jpg')"
-    >
-      <h1 class="serif-regular fade-in">Recruitment Timeline</h1>
+    <!-- HERO -->
+    <div class="recruit-hero">
+      <p class="eyebrow fade-in">Applications</p>
+      <h1 class="serif-regular fade-in">Join WSC</h1>
+      <p class="fade-in">Recruitment details for the upcoming semester will be announced soon. Enter your email to be notified when applications open.</p>
+      <div class="notify-form fade-in">
+        <input type="email" placeholder="your@cornell.edu" />
+        <button type="button">Notify Me</button>
+      </div>
     </div>
 
-    <section id="timeline" class="timeline-section">
-      <div class="timeline-container">
-        <div class="timeline-event">
-          <div class="timeline-date">August 25, 2025</div>
-          <div class="timeline-content">
-            <h3>Application Opens</h3>
-            <p>
-              Kickstart your journey with CPMC! Applications for the fall
-              recruitment cycle open online.
-            </p>
+    <div class="divider"></div>
+
+    <!-- WHAT TO EXPECT -->
+    <section id="what-to-expect">
+      <div class="section-inner">
+        <p class="section-label fade-in">Process</p>
+        <h2 class="serif-regular fade-in">What to Expect</h2>
+        <div class="steps">
+          <div class="step fade-in">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Application</h3>
+              <p>Submit a short written application covering your background, interests in finance, and why you want to join WSC.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Coffee Chats</h3>
+              <p>Selected applicants are invited to informal coffee chats with current members to learn more about the club and share their goals.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>First Round Interview</h3>
+              <p>Selected candidates complete a first round interview covering finance fundamentals, motivation, and initial fit with the WSC community.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Final Round Interview</h3>
+              <p>Top candidates from the first round are invited back for a final interview, going deeper into technical knowledge and cultural fit.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Offers</h3>
+              <p>Successful candidates receive an offer and are welcomed into the club, with immediate access to mentorship and programming.</p>
+            </div>
           </div>
         </div>
-        <div class="timeline-event">
-          <div class="timeline-date">September 5, 2025</div>
-          <div class="timeline-content">
-            <h3>Info Session</h3>
-            <p>
-              Join us for an introductory session to learn more about our club
-              and recruitment process.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-event">
-          <div class="timeline-date">September 12, 2025</div>
-          <div class="timeline-content">
-            <h3>Application Deadline</h3>
-            <p>
-              Submit your application by this date to be considered for the fall
-              recruitment cycle.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-event">
-          <div class="timeline-date">September 18, 2025</div>
-          <div class="timeline-content">
-            <h3>First-Round Interviews</h3>
-            <p>
-              Selected applicants will participate in first-round interviews to
-              assess their skills and interest.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-event">
-          <div class="timeline-date">September 25, 2025</div>
-          <div class="timeline-content">
-            <h3>Final Round Interviews</h3>
-            <p>
-              Final interviews with our executive team to select new members for
-              the club.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-event">
-          <div class="timeline-date">October 1, 2025</div>
-          <div class="timeline-content">
-            <h3>Welcome New Members</h3>
-            <p>
-              Congratulations to our new members! Join us for an orientation and
-              welcome event.
-            </p>
-          </div>
+        <div class="coming-soon fade-in">
+          <div class="badge-pill">Coming Soon</div>
+          <p>Exact dates and the application link will be posted here when recruitment opens.</p>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER WITH PARTICLES -->
+    <!-- FOOTER -->
     <footer class="sans-regular">
-        <div class="footer-content fade-in">
-          <p>&copy; 2024 Cornell Portfolio Management Club</p>
-          <p>
-            This organization is a registered student organization of Cornell
-            University
-          </p>
-  
-          <!-- Social Media Links -->
-          <div class="social-icons">
-            <a
-              href="https://www.instagram.com/cornellportfoliomanagementclub/"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/cornell-portfolio-management-club/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-      </footer>
-  
-      <!-- Popup Modal -->
-      <div id="popup" class="popup">
-        <div class="popup-content">
-          <span class="close-btn" onclick="hidePopup()">&times;</span>
-          <img
-            id="popup-image"
-            src="images/filler.png"
-            alt=""
-            class="popup-image"
-          />
-          <h3 id="member-name"></h3>
-          <p id="member-info"></p>
+      <div class="footer-content fade-in">
+        <p>&copy; 2026 Cornell Wall Street Club</p>
+        <p>This organization is a registered student organization of Cornell University</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cornellwsc/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/111008953/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-  
-      <!-- SCRIPTS -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-              }
-            });
-          });
-  
-          document.querySelectorAll('.fade-in').forEach((section) => {
-            observer.observe(section);
-          });
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
         });
-      </script>
-      <script src="script.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-  </html>
-  
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
