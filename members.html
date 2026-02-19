@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Members — Cornell Wall Street Club</title>
+    <link rel="icon" href="favicon.ico" type="image/favicon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="colors.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+      body { background-color: var(--color-black); }
+
+      .team-hero {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        padding: 10rem 2rem 4rem;
+        text-align: center;
+      }
+      .team-hero h1 { font-size: 3.5rem; color: var(--color-white); text-shadow: none; }
+      .team-hero p { font-size: 1rem; opacity: 0.5; letter-spacing: 0.08em; margin-top: 0.5rem; font-family: 'Manrope', sans-serif; font-weight: 200; }
+
+      #members-section {
+        background-color: var(--color-black);
+        padding: 3rem 2rem 8rem;
+        text-align: center;
+      }
+
+      .section-label {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.4rem;
+      }
+      .section-title {
+        font-family: 'Baskerville', serif;
+        font-size: 2rem;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+      }
+      .section-subtitle {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 200;
+        font-size: 1rem;
+        color: var(--color-white);
+        opacity: 0.5;
+        letter-spacing: 0.04em;
+        margin-bottom: 3rem;
+      }
+
+      .members-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem 1.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .member-name-item {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.95rem;
+        color: var(--color-white);
+        opacity: 0.75;
+        letter-spacing: 0.03em;
+        padding: 0.3rem 0.6rem;
+        border-bottom: 0.09rem solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+      }
+      .member-name-item:hover {
+        color: var(--color-red);
+        opacity: 1;
+        border-bottom-color: var(--color-red);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/logo-full.svg" height="50" alt="Logo" />
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link sans-regular" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link sans-regular dropdown-toggle" href="#" id="teamDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Team</a>
+            <div class="dropdown-menu" aria-labelledby="teamDropdown">
+              <a class="dropdown-item sans-regular" href="eboard.html">Executive Board</a>
+              <a class="dropdown-item sans-regular" href="mentors.html">Mentors</a>
+              <a class="dropdown-item sans-regular" href="members.html">Members</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="recruitment.html">Recruitment</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="members-only.html">Members Only</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="team-hero">
+      <h1 class="serif-regular fade-in">Members</h1>
+      <p class="fade-in">The Cornell Wall Street Club community</p>
+    </div>
+
+    <!-- MEMBERS LIST -->
+    <section id="members-section">
+      <p class="section-label fade-in">2024–2025</p>
+      <h2 class="section-title serif-regular fade-in">Current Members</h2>
+      <p class="section-subtitle sans-light fade-in">Add member names here</p>
+      <div class="members-grid fade-in">
+        <!-- Add member names below as needed -->
+        <span class="member-name-item">Member Name</span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="sans-regular">
+      <div class="footer-content fade-in">
+        <p>&copy; 2026 Cornell Wall Street Club</p>
+        <p>This organization is a registered student organization of Cornell University</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cornellwsc/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/111008953/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        });
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

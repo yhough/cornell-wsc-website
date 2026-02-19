@@ -3,25 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Executive Board</title>
+    <title>Executive Board — Cornell Wall Street Club</title>
     <link rel="icon" href="favicon.ico" type="image/favicon" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="particle-script.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="colors.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+      body { background-color: var(--color-black); }
+
+      .team-hero {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        padding: 10rem 2rem 4rem;
+        text-align: center;
+      }
+      .team-hero h1 { font-size: 3.5rem; color: var(--color-white); text-shadow: none; }
+      .team-hero p { font-size: 1rem; opacity: 0.5; letter-spacing: 0.08em; margin-top: 0.5rem; font-family: 'Manrope', sans-serif; font-weight: 200; }
+
+      #eboard { background-color: var(--color-black); padding: 3rem 0.5rem 6rem; }
+
+      .section-label {
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.4rem;
+      }
+      .section-title {
+        text-align: center;
+        font-family: 'Baskerville', serif;
+        font-size: 2rem;
+        color: var(--color-white);
+        margin-bottom: 3rem;
+      }
+
+      .member-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .member-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        width: 195px;
+        transition: transform 0.2s ease;
+      }
+      .member-card:hover { transform: translateY(-5px); }
+      .member-card:hover .member-pic { box-shadow: 0 0 1.5rem var(--color-red); }
+
+      .member-pic {
+        width: 195px;
+        height: 260px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .member-name {
+        font-family: 'Baskerville', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--color-white);
+        margin: 0 0 0.25rem;
+      }
+      .member-role {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        color: var(--color-red);
+        letter-spacing: 0.03em;
+        line-height: 1.4;
+      }
+
+      /* Override popup for dark theme */
+      .popup-content {
+        background-color: #1a1a1a;
+        color: var(--color-white);
+        border: 0.09rem solid rgba(255,250,250,0.1);
+      }
+      .popup-content h3 { color: var(--color-white); }
+      .close-btn { color: var(--color-white); }
+    </style>
   </head>
 
   <body>
@@ -30,212 +109,181 @@
       <a class="navbar-brand" href="index.html">
         <img src="./images/logo-full.svg" height="50" alt="Logo" />
       </a>
-      <button
-        class="navbar-toggler custom-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="index.html">Home</a>
+          <li class="nav-item"><a class="nav-link sans-regular" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link sans-regular dropdown-toggle" href="#" id="teamDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Team</a>
+            <div class="dropdown-menu" aria-labelledby="teamDropdown">
+              <a class="dropdown-item sans-regular" href="eboard.html">Executive Board</a>
+              <a class="dropdown-item sans-regular" href="mentors.html">Mentors</a>
+              <a class="dropdown-item sans-regular" href="members.html">Members</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="eboard.html"
-              >Executive Board</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="recruitment.html"
-              >Recruitment Timeline</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sans-regular" href="quant.html">Quant</a>
-          </li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="recruitment.html">Recruitment</a></li>
+          <li class="nav-item"><a class="nav-link sans-regular" href="members-only.html">Members Only</a></li>
         </ul>
       </div>
     </nav>
 
-    <div
-      class="image-background"
-      style="background-image: url('images/cornell5.jpg')"
-    >
+    <!-- HERO -->
+    <div class="team-hero">
       <h1 class="serif-regular fade-in">Executive Board</h1>
+      <p class="fade-in">Cornell Wall Street Club Leadership</p>
     </div>
-        <section id="eboard">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('alex')">
-            <div class="member">
-              <img
-                src="images/people/alex-smith.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Alex Smith</h3>
-              <p class="member-description">President</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('haiar')">
-            <div class="member">
-              <img
-                src="images/people/haiar-isliamov.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Haiar Isliamov</h3>
-              <p class="member-description">Vice President</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('paul')">
-            <div class="member">
-              <img
-                src="images/people/paul-iacobucci.jpg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Paul Iacobucci</h3>
-              <p class="member-description">VP of Technology, Head of Quant</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('dennis')">
-            <div class="member">
-              <img
-                src="images/people/dennis-voloshko.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Dennis Voloshko</h3>
-              <p class="member-description">Treasurer</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('james')">
-            <div class="member">
-              <img
-                src="images/people/james-lynch.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>James Lynch</h3>
-              <p class="member-description">VP of Investments</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('julio')">
-            <div class="member">
-              <img
-                src="images/people/julio-kutrolli.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Julio Kutrolli</h3>
-              <p class="member-description">VP of Outreach</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('thomas')">
-            <div class="member">
-              <img
-                src="images/people/thomas-vogeley.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Thomas Vogeley</h3>
-              <p class="member-description">VP of DEI</p>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('daniel')">
-            <div class="member">
-              <img
-                src="images/people/daniel-bitensky.jpeg"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Daniel Bitensky</h3>
-              <p class="member-description">VP of Events</p>
-            </div>
-          </div>
-          <!-- <div class="col-12 col-sm-6 col-md-4 fade-in" onclick="showPopup('member9')">
-            <div class="member">
-              <img
-                src="images/filler.png"
-                alt="Cornell Portfolio Management Club Logo"
-                class="member-pic"
-              />
-              <h3>Member 9</h3>
-              <p class="member-description">Job Class of 2020 this is very very long</p>
-            </div>
-          </div> -->
+
+    <!-- MEMBERS -->
+    <section id="eboard">
+      <p class="section-label fade-in">2024–2025</p>
+      <h2 class="section-title serif-regular fade-in">Our Leaders</h2>
+      <div class="member-grid">
+
+        <div class="member-card fade-in" onclick="showPopup('max-popov')">
+          <img src="images/people/wsc/max-popov.jpg" alt="Max Popov" class="member-pic" />
+          <p class="member-name">Max Popov</p>
+          <p class="member-role">President</p>
         </div>
+
+        <div class="member-card fade-in" onclick="showPopup('max-grandov')">
+          <img src="images/people/wsc/max-grandov.jpg" alt="Max Grandov" class="member-pic" />
+          <p class="member-name">Max Grandov</p>
+          <p class="member-role">Vice President</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('aayan-shah')">
+          <img src="images/people/wsc/aayan-shah.jpg" alt="Aayan Shah" class="member-pic" />
+          <p class="member-name">Aayan Shah</p>
+          <p class="member-role">Co-VP of Recruitment</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('dylan-gutowski')">
+          <img src="images/people/wsc/dylan-gutowski.jpg" alt="Dylan Gutowski" class="member-pic" />
+          <p class="member-name">Dylan Gutowski</p>
+          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('aleksandra-rombakh')">
+          <img src="images/people/wsc/aleksandra-rombakh.jpg" alt="Aleksandra Rombakh" class="member-pic" />
+          <p class="member-name">Aleksandra Rombakh</p>
+          <p class="member-role">VP of Investment Fund</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('koorosh-heidari')">
+          <img src="images/people/wsc/koorosh-heidari.jpg" alt="Koorosh Heidari" class="member-pic" />
+          <p class="member-name">Koorosh Heidari</p>
+          <p class="member-role">VP of Finance &amp; Education</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('michael-chen')">
+          <img src="images/people/wsc/michael-chen.jpg" alt="Michael Chen" class="member-pic" />
+          <p class="member-name">Michael Chen</p>
+          <p class="member-role">VP of Finance</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('sofiia-rosinska')">
+          <img src="images/people/wsc/sofiia-rosinska.jpg" alt="Sofiia Rosinska" class="member-pic" />
+          <p class="member-name">Sofiia Rosinska</p>
+          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('sophia-safieddine')">
+          <img src="images/people/wsc/sophia-safieddine.jpg" alt="Sophia Safieddine" class="member-pic" />
+          <p class="member-name">Sophia Safieddine</p>
+          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('jake-quan')">
+          <img src="images/people/wsc/jake-quan.jpg" alt="Jake Quan" class="member-pic" />
+          <p class="member-name">Jake Quan</p>
+          <p class="member-role">Co-VP of Recruitment</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('coco-you')">
+          <img src="images/people/wsc/coco-you.jpg" alt="Coco You" class="member-pic" />
+          <p class="member-name">Coco You</p>
+          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('tahmid-ahmed')">
+          <img src="images/people/wsc/tahmid-ahmed.jpg" alt="Tahmid Ahmed" class="member-pic" />
+          <p class="member-name">Tahmid Ahmed</p>
+          <p class="member-role">VP of Alumni &amp; Industry Relations</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('morgan-valia-peters')">
+          <img src="images/people/wsc/morgan-valia-peters.jpg" alt="Morgan Valia-Peters" class="member-pic" />
+          <p class="member-name">Morgan Valia-Peters</p>
+          <p class="member-role">VP of Events &amp; Logistics</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- FOOTER WITH PARTICLES -->
+    <!-- FOOTER -->
     <footer class="sans-regular">
       <div class="footer-content fade-in">
-        <p>&copy; 2024 Cornell Portfolio Management Club</p>
-        <p>
-          This organization is a registered student organization of Cornell
-          University
-        </p>
-
-        <!-- Social Media Links -->
+        <p>&copy; 2026 Cornell Wall Street Club</p>
+        <p>This organization is a registered student organization of Cornell University</p>
         <div class="social-icons">
-          <a
-            href="https://www.instagram.com/cornellportfoliomanagementclub/"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/cornell-portfolio-management-club/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+          <a href="https://www.instagram.com/cornellwsc/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/111008953/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </footer>
 
-    <!-- Popup Modal -->
+    <!-- POPUP -->
     <div id="popup" class="popup">
       <div class="popup-content">
         <span class="close-btn" onclick="hidePopup()">&times;</span>
-        <img
-          id="popup-image"
-          src="images/filler.png"
-          alt=""
-          class="popup-image"
-        />
+        <img id="popup-image" src="images/filler.png" alt="" class="popup-image" />
         <h3 id="member-name"></h3>
-        <p id="member-info"></p>
+        <p id="member-info" class="member-info"></p>
       </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script>
+      const memberInfo = {
+        'max-popov':          { name: 'Max Popov',           info: 'Max serves as President, overseeing all club operations, setting strategic goals, and ensuring effective leadership across all divisions.', image: 'images/people/wsc/max-popov.jpg' },
+        'max-grandov':        { name: 'Max Grandov',         info: 'Max serves as Vice President, supporting the President in coordinating leadership and ensuring all initiatives are executed effectively.', image: 'images/people/wsc/max-grandov.jpg' },
+        'aayan-shah':         { name: 'Aayan Shah',          info: 'Aayan serves as Co-VP of Recruitment, managing the recruitment pipeline and ensuring a rigorous and fair selection process.', image: 'images/people/wsc/aayan-shah.jpg' },
+        'jake-quan':          { name: 'Jake Quan',           info: 'Jake serves as Co-VP of Recruitment, working alongside Aayan to attract and onboard talented new members.', image: 'images/people/wsc/jake-quan.jpg' },
+        'dylan-gutowski':     { name: 'Dylan Gutowski',      info: 'Dylan serves as Co-VP of Education & Mentorship, overseeing the Wall Street Mentorship program and member development.', image: 'images/people/wsc/dylan-gutowski.jpg' },
+        'coco-you':           { name: 'Coco You',            info: 'Coco serves as Co-VP of Education & Mentorship, co-leading educational programming and the Interview Preparation Mentorship.', image: 'images/people/wsc/coco-you.jpg' },
+        'aleksandra-rombakh': { name: 'Aleksandra Rombakh',  info: 'Aleksandra serves as VP of Investment Fund & Finance, managing WSC\'s investment fund and overseeing financial education initiatives.', image: 'images/people/wsc/aleksandra-rombakh.jpg' },
+        'koorosh-heidari':    { name: 'Koorosh Heidari',     info: 'Koorosh serves as VP of Finance & Education, overseeing the club\'s financial operations and educational initiatives.', image: 'images/people/wsc/koorosh-heidari.jpg' },
+        'sofiia-rosinska':    { name: 'Sofiia Rosinska',     info: 'Sofiia serves as Co-VP of Marketing & Communications, managing the club\'s brand, social media, and external communications.', image: 'images/people/wsc/sofiia-rosinska.jpg' },
+        'sophia-safieddine':  { name: 'Sophia Safieddine',   info: 'Sophia serves as Co-VP of Marketing & Communications, collaborating on outreach strategy and digital presence.', image: 'images/people/wsc/sophia-safieddine.jpg' },
+        'michael-chen':       { name: 'Michael Chen',        info: 'Michael serves as VP of Finance, supporting financial planning and budgeting across all club divisions.', image: 'images/people/wsc/michael-chen.jpg' },
+        'tahmid-ahmed':       { name: 'Tahmid Ahmed',        info: 'Tahmid serves as VP of Alumni & Industry Relations, building and maintaining relationships with alumni and finance professionals.', image: 'images/people/wsc/tahmid-ahmed.jpg' },
+        'morgan-valia-peters':{ name: 'Morgan Valia-Peters',  info: 'Morgan serves as VP of Events & Logistics, planning and coordinating all club events, speaker sessions, and NYC trips.', image: 'images/people/wsc/morgan-valia-peters.jpg' },
+      };
+
+      function showPopup(id) {
+        const m = memberInfo[id];
+        if (!m) return;
+        document.getElementById('member-name').innerText = m.name;
+        document.getElementById('member-info').innerText = m.info;
+        document.getElementById('popup-image').src = m.image;
+        document.getElementById('popup').classList.add('show');
+      }
+      function hidePopup() {
+        document.getElementById('popup').classList.remove('show');
+      }
       document.addEventListener('DOMContentLoaded', function () {
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
+          entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
         });
-
-        document.querySelectorAll('.fade-in').forEach((section) => {
-          observer.observe(section);
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        document.addEventListener('click', function (e) {
+          const popup = document.getElementById('popup');
+          if (popup.classList.contains('show') && !document.querySelector('.popup-content').contains(e.target)) hidePopup();
         });
       });
     </script>
-    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
