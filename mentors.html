@@ -48,10 +48,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2.5rem 2rem;
+        gap: 3rem 2rem;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 2.5rem;
       }
 
       .member-card {
@@ -60,15 +60,15 @@
         align-items: center;
         text-align: center;
         cursor: pointer;
-        width: 195px;
+        width: 248px;
         transition: transform 0.2s ease;
       }
       .member-card:hover { transform: translateY(-5px); }
       .member-card:hover .member-pic { box-shadow: 0 0 1.5rem var(--color-red); }
 
       .member-pic {
-        width: 195px;
-        height: 260px;
+        width: 248px;
+        height: 330px;
         object-fit: cover;
         object-position: top;
         border-radius: 8px;
@@ -115,7 +115,6 @@
             <div class="dropdown-menu" aria-labelledby="teamDropdown">
               <a class="dropdown-item sans-regular" href="eboard.html">Executive Board</a>
               <a class="dropdown-item sans-regular" href="mentors.html">Mentors</a>
-              <a class="dropdown-item sans-regular" href="members.html">Members</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link sans-regular" href="recruitment.html">Recruitment</a></li>
@@ -136,21 +135,21 @@
       <h2 class="section-title serif-regular fade-in">Our Mentors</h2>
       <div class="member-grid">
 
+        <div class="member-card fade-in" onclick="showPopup('thulasi-vithiyashankar')">
+          <img src="images/people/wsc/joseph-sciarrone.jpg" alt="Thulasi Vithiyashankar" class="member-pic" />
+          <p class="member-name">Thulasi Vithiyashankar</p>
+          <p class="member-role">Mentor</p>
+        </div>
+
         <div class="member-card fade-in" onclick="showPopup('joseph-sciarrone')">
-          <img src="images/people/wsc/joseph-sciarrone.jpg" alt="Joseph Sciarrone" class="member-pic" />
+          <img src="images/people/wsc/alexa-friesel.jpg" alt="Joseph Sciarrone" class="member-pic" />
           <p class="member-name">Joseph Sciarrone</p>
           <p class="member-role">Mentor</p>
         </div>
 
         <div class="member-card fade-in" onclick="showPopup('alexa-friesel')">
-          <img src="images/people/wsc/alexa-friesel.jpg" alt="Alexa Friesel" class="member-pic" />
+          <img src="images/people/wsc/thulasi-vithiyashankar.jpg" alt="Alexa Friesel" class="member-pic" />
           <p class="member-name">Alexa Friesel</p>
-          <p class="member-role">Mentor</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('thulasi-vithiyashankar')">
-          <img src="images/people/wsc/thulasi-vithiyashankar.jpg" alt="Thulasi Vithiyashankar" class="member-pic" />
-          <p class="member-name">Thulasi Vithiyashankar</p>
           <p class="member-role">Mentor</p>
         </div>
 

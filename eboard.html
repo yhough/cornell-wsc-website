@@ -48,10 +48,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2.5rem 2rem;
+        gap: 3rem 2rem;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 2.5rem;
       }
 
       .member-card {
@@ -60,15 +60,15 @@
         align-items: center;
         text-align: center;
         cursor: pointer;
-        width: 195px;
+        width: 248px;
         transition: transform 0.2s ease;
       }
       .member-card:hover { transform: translateY(-5px); }
       .member-card:hover .member-pic { box-shadow: 0 0 1.5rem var(--color-red); }
 
       .member-pic {
-        width: 195px;
-        height: 260px;
+        width: 248px;
+        height: 330px;
         object-fit: cover;
         object-position: top;
         border-radius: 8px;
@@ -121,7 +121,6 @@
             <div class="dropdown-menu" aria-labelledby="teamDropdown">
               <a class="dropdown-item sans-regular" href="eboard.html">Executive Board</a>
               <a class="dropdown-item sans-regular" href="mentors.html">Mentors</a>
-              <a class="dropdown-item sans-regular" href="members.html">Members</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link sans-regular" href="recruitment.html">Recruitment</a></li>
@@ -138,8 +137,6 @@
 
     <!-- MEMBERS -->
     <section id="eboard">
-      <p class="section-label fade-in">2024–2025</p>
-      <h2 class="section-title serif-regular fade-in">Our Leaders</h2>
       <div class="member-grid">
 
         <div class="member-card fade-in" onclick="showPopup('max-popov')">
@@ -160,52 +157,40 @@
           <p class="member-role">Co-VP of Recruitment</p>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('dylan-gutowski')">
-          <img src="images/people/wsc/dylan-gutowski.jpg" alt="Dylan Gutowski" class="member-pic" />
-          <p class="member-name">Dylan Gutowski</p>
-          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('aleksandra-rombakh')">
-          <img src="images/people/wsc/aleksandra-rombakh.jpg" alt="Aleksandra Rombakh" class="member-pic" />
-          <p class="member-name">Aleksandra Rombakh</p>
-          <p class="member-role">VP of Investment Fund</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('koorosh-heidari')">
-          <img src="images/people/wsc/koorosh-heidari.jpg" alt="Koorosh Heidari" class="member-pic" />
-          <p class="member-name">Koorosh Heidari</p>
-          <p class="member-role">VP of Finance &amp; Education</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('michael-chen')">
-          <img src="images/people/wsc/michael-chen.jpg" alt="Michael Chen" class="member-pic" />
-          <p class="member-name">Michael Chen</p>
-          <p class="member-role">VP of Finance</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('sofiia-rosinska')">
-          <img src="images/people/wsc/sofiia-rosinska.jpg" alt="Sofiia Rosinska" class="member-pic" />
-          <p class="member-name">Sofiia Rosinska</p>
-          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
-        </div>
-
-        <div class="member-card fade-in" onclick="showPopup('sophia-safieddine')">
-          <img src="images/people/wsc/sophia-safieddine.jpg" alt="Sophia Safieddine" class="member-pic" />
-          <p class="member-name">Sophia Safieddine</p>
-          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
-        </div>
-
         <div class="member-card fade-in" onclick="showPopup('jake-quan')">
           <img src="images/people/wsc/jake-quan.jpg" alt="Jake Quan" class="member-pic" />
           <p class="member-name">Jake Quan</p>
           <p class="member-role">Co-VP of Recruitment</p>
         </div>
 
+        <div class="member-card fade-in" onclick="showPopup('sophia-safieddine')">
+          <img src="images/people/wsc/sophia-safieddine.jpg" alt="Sofia Safieddine" class="member-pic" />
+          <p class="member-name">Sofia Safieddine</p>
+          <p class="member-role">VP of Finance &amp; Education</p>
+        </div>
+
         <div class="member-card fade-in" onclick="showPopup('coco-you')">
           <img src="images/people/wsc/coco-you.jpg" alt="Coco You" class="member-pic" />
           <p class="member-name">Coco You</p>
           <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('dylan-gutowski')">
+          <img src="images/people/wsc/dylan-gutowski.jpg" alt="Dylan Gutowski" class="member-pic" />
+          <p class="member-name">Dylan Gutowski</p>
+          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('koorosh-heidari')">
+          <img src="images/people/wsc/koorosh-heidari.jpg" alt="Koorosh Heidari" class="member-pic" />
+          <p class="member-name">Koorosh Heidari</p>
+          <p class="member-role">VP of Finance</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('aleksandra-rombakh')">
+          <img src="images/people/wsc/aleksandra-rombakh.jpg" alt="Aleksandra Rombakh" class="member-pic" />
+          <p class="member-name">Aleksandra Rombakh</p>
+          <p class="member-role">VP of Investment Fund</p>
         </div>
 
         <div class="member-card fade-in" onclick="showPopup('tahmid-ahmed')">
@@ -218,6 +203,18 @@
           <img src="images/people/wsc/morgan-valia-peters.jpg" alt="Morgan Valia-Peters" class="member-pic" />
           <p class="member-name">Morgan Valia-Peters</p>
           <p class="member-role">VP of Events &amp; Logistics</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('sofiia-rosinska')">
+          <img src="images/people/wsc/sofiia-rosinska.jpg" alt="Sofiia Rosinska" class="member-pic" />
+          <p class="member-name">Sofiia Rosinska</p>
+          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+        </div>
+
+        <div class="member-card fade-in" onclick="showPopup('michael-chen')">
+          <img src="images/people/wsc/michael-chen.jpg" alt="Michael Chen" class="member-pic" />
+          <p class="member-name">Michael Chen</p>
+          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
         </div>
 
       </div>
@@ -251,15 +248,15 @@
         'max-grandov':        { name: 'Max Grandov',         info: 'Max serves as Vice President, supporting the President in coordinating leadership and ensuring all initiatives are executed effectively.', image: 'images/people/wsc/max-grandov.jpg' },
         'aayan-shah':         { name: 'Aayan Shah',          info: 'Aayan serves as Co-VP of Recruitment, managing the recruitment pipeline and ensuring a rigorous and fair selection process.', image: 'images/people/wsc/aayan-shah.jpg' },
         'jake-quan':          { name: 'Jake Quan',           info: 'Jake serves as Co-VP of Recruitment, working alongside Aayan to attract and onboard talented new members.', image: 'images/people/wsc/jake-quan.jpg' },
-        'dylan-gutowski':     { name: 'Dylan Gutowski',      info: 'Dylan serves as Co-VP of Education & Mentorship, overseeing the Wall Street Mentorship program and member development.', image: 'images/people/wsc/dylan-gutowski.jpg' },
+        'sophia-safieddine':  { name: 'Sofia Safieddine',    info: 'Sofia serves as VP of Finance & Education, overseeing financial planning and educational initiatives across all club divisions.', image: 'images/people/wsc/sophia-safieddine.jpg' },
         'coco-you':           { name: 'Coco You',            info: 'Coco serves as Co-VP of Education & Mentorship, co-leading educational programming and the Interview Preparation Mentorship.', image: 'images/people/wsc/coco-you.jpg' },
-        'aleksandra-rombakh': { name: 'Aleksandra Rombakh',  info: 'Aleksandra serves as VP of Investment Fund & Finance, managing WSC\'s investment fund and overseeing financial education initiatives.', image: 'images/people/wsc/aleksandra-rombakh.jpg' },
-        'koorosh-heidari':    { name: 'Koorosh Heidari',     info: 'Koorosh serves as VP of Finance & Education, overseeing the club\'s financial operations and educational initiatives.', image: 'images/people/wsc/koorosh-heidari.jpg' },
-        'sofiia-rosinska':    { name: 'Sofiia Rosinska',     info: 'Sofiia serves as Co-VP of Marketing & Communications, managing the club\'s brand, social media, and external communications.', image: 'images/people/wsc/sofiia-rosinska.jpg' },
-        'sophia-safieddine':  { name: 'Sophia Safieddine',   info: 'Sophia serves as Co-VP of Marketing & Communications, collaborating on outreach strategy and digital presence.', image: 'images/people/wsc/sophia-safieddine.jpg' },
-        'michael-chen':       { name: 'Michael Chen',        info: 'Michael serves as VP of Finance, supporting financial planning and budgeting across all club divisions.', image: 'images/people/wsc/michael-chen.jpg' },
+        'dylan-gutowski':     { name: 'Dylan Gutowski',      info: 'Dylan serves as Co-VP of Education & Mentorship, overseeing the Wall Street Mentorship program and member development.', image: 'images/people/wsc/dylan-gutowski.jpg' },
+        'koorosh-heidari':    { name: 'Koorosh Heidari',     info: 'Koorosh serves as VP of Finance, handling the club\'s budget and financial planning.', image: 'images/people/wsc/koorosh-heidari.jpg' },
+        'aleksandra-rombakh': { name: 'Aleksandra Rombakh',  info: 'Aleksandra serves as VP of Investment Fund, managing WSC\'s investment fund and overseeing portfolio strategy.', image: 'images/people/wsc/aleksandra-rombakh.jpg' },
         'tahmid-ahmed':       { name: 'Tahmid Ahmed',        info: 'Tahmid serves as VP of Alumni & Industry Relations, building and maintaining relationships with alumni and finance professionals.', image: 'images/people/wsc/tahmid-ahmed.jpg' },
         'morgan-valia-peters':{ name: 'Morgan Valia-Peters',  info: 'Morgan serves as VP of Events & Logistics, planning and coordinating all club events, speaker sessions, and NYC trips.', image: 'images/people/wsc/morgan-valia-peters.jpg' },
+        'sofiia-rosinska':    { name: 'Sofiia Rosinska',     info: 'Sofiia serves as Co-VP of Marketing & Communications, managing the club\'s brand, social media, and external communications.', image: 'images/people/wsc/sofiia-rosinska.jpg' },
+        'michael-chen':       { name: 'Michael Chen',        info: 'Michael serves as Co-VP of Marketing & Communications, collaborating on outreach strategy and digital presence.', image: 'images/people/wsc/michael-chen.jpg' },
       };
 
       function showPopup(id) {
