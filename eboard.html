@@ -26,24 +26,6 @@
 
       #eboard { background-color: var(--color-black); padding: 3rem 0.5rem 6rem; }
 
-      .section-label {
-        text-align: center;
-        font-family: 'Manrope', sans-serif;
-        font-weight: 300;
-        font-size: 0.75rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-red);
-        margin-bottom: 0.4rem;
-      }
-      .section-title {
-        text-align: center;
-        font-family: 'Baskerville', serif;
-        font-size: 2rem;
-        color: var(--color-white);
-        margin-bottom: 3rem;
-      }
-
       .member-grid {
         display: flex;
         flex-wrap: wrap;
@@ -54,52 +36,159 @@
         padding: 0 2.5rem;
       }
 
-      .member-card {
+      /* FLIP CARD */
+      .flip-card {
+        width: 248px;
+        height: 420px;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      /* FRONT */
+      .flip-card-front {
+        background-color: var(--color-black);
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        cursor: pointer;
-        width: 248px;
-        transition: transform 0.2s ease;
       }
-      .member-card:hover { transform: translateY(-5px); }
-      .member-card:hover .member-pic { box-shadow: 0 0 1.5rem var(--color-red); }
 
-      .member-pic {
+      .flip-card-front img {
         width: 248px;
         height: 330px;
         object-fit: cover;
         object-position: top;
-        border-radius: 8px;
-        margin-bottom: 0.75rem;
+        border-radius: 10px 10px 0 0;
         transition: box-shadow 0.3s ease;
+        display: block;
       }
 
-      .member-name {
+      .flip-card:hover .flip-card-front img {
+        box-shadow: 0 0 1.5rem var(--color-red);
+      }
+
+      .flip-card-front-text {
+        width: 100%;
+        padding: 0.75rem 0.5rem 0.5rem;
+        text-align: center;
+      }
+
+      .flip-card-front-text .member-name {
         font-family: 'Baskerville', serif;
         font-style: italic;
         font-size: 1.05rem;
         color: var(--color-white);
-        margin: 0 0 0.25rem;
+        margin: 0 0 0.2rem;
       }
-      .member-role {
+
+      .flip-card-front-text .member-role {
         font-family: 'Manrope', sans-serif;
         font-weight: 300;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         color: var(--color-red);
         letter-spacing: 0.03em;
         line-height: 1.4;
+        margin: 0 0 0.5rem;
       }
 
-      /* Override popup for dark theme */
-      .popup-content {
-        background-color: #1a1a1a;
-        color: var(--color-white);
-        border: 0.09rem solid rgba(255,250,250,0.1);
+      .flip-hint {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 200;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 250, 250, 0.25);
       }
-      .popup-content h3 { color: var(--color-white); }
-      .close-btn { color: var(--color-white); }
+
+      /* BACK */
+      .flip-card-back {
+        background-color: #181818;
+        border: 0.09rem solid rgba(255, 250, 250, 0.1);
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.75rem 1.5rem 1.25rem;
+        text-align: left;
+        overflow: hidden;
+      }
+
+      .flip-card-back .back-role {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.4rem;
+      }
+
+      .flip-card-back .back-name {
+        font-family: 'Baskerville', serif;
+        font-size: 1.2rem;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .flip-card-back .back-bio {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.78rem;
+        line-height: 1.75;
+        color: rgba(255, 250, 250, 0.65);
+        margin: 0;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar-thumb {
+        background-color: var(--color-red);
+        border-radius: 3px;
+      }
+
+      .flip-card-back .back-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.9rem;
+        font-size: 1rem;
+        color: rgba(255, 250, 250, 0.3);
+        font-family: 'Manrope', sans-serif;
+        font-weight: 200;
+        transition: color 0.2s ease;
+      }
+
+      .flip-card-back .back-close:hover { color: var(--color-red); }
     </style>
   </head>
 
@@ -139,82 +228,251 @@
     <section id="eboard">
       <div class="member-grid">
 
-        <div class="member-card fade-in" onclick="showPopup('max-popov')">
-          <img src="images/people/wsc/max-popov.jpg" alt="Max Popov" class="member-pic" />
-          <p class="member-name">Max Popov</p>
-          <p class="member-role">President</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/max-popov.jpg" alt="Max Popov" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Max Popov</p>
+                <p class="member-role">President</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">President</p>
+              <p class="back-name">Max Popov</p>
+              <p class="back-bio">Max serves as President, overseeing all club operations, setting strategic goals, and ensuring effective leadership across all divisions of the Cornell Wall Street Club.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('max-grandov')">
-          <img src="images/people/wsc/max-grandov.jpg" alt="Max Grandov" class="member-pic" />
-          <p class="member-name">Max Grandov</p>
-          <p class="member-role">Vice President</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/max-grandov.jpg" alt="Max Grandov" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Max Grandov</p>
+                <p class="member-role">Vice President</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Vice President</p>
+              <p class="back-name">Max Grandov</p>
+              <p class="back-bio">Max serves as Vice President, supporting the President in coordinating leadership and ensuring all WSC initiatives are executed effectively across every division.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('aayan-shah')">
-          <img src="images/people/wsc/aayan-shah.jpg" alt="Aayan Shah" class="member-pic" />
-          <p class="member-name">Aayan Shah</p>
-          <p class="member-role">Co-VP of Recruitment</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/aayan-shah.jpg" alt="Aayan Shah" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Aayan Shah</p>
+                <p class="member-role">Co-VP of Recruitment</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Recruitment</p>
+              <p class="back-name">Aayan Shah</p>
+              <p class="back-bio">Aayan serves as Co-VP of Recruitment, managing the recruitment pipeline and ensuring a rigorous and fair selection process to bring in talented new members.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('jake-quan')">
-          <img src="images/people/wsc/jake-quan.jpg" alt="Jake Quan" class="member-pic" />
-          <p class="member-name">Jake Quan</p>
-          <p class="member-role">Co-VP of Recruitment</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/jake-quan.jpg" alt="Jake Quan" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Jake Quan</p>
+                <p class="member-role">Co-VP of Recruitment</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Recruitment</p>
+              <p class="back-name">Jake Quan</p>
+              <p class="back-bio">Jake Quan is a freshman in the College of Arts &amp; Sciences at Cornell University intending to major in Economics and Computer Science. He previously interned at Catalur Investments, a $485mm distressed-focused hedge fund, where he analyzed financial statements and supported investment reporting. At Cornell, he is involved in Startup Consulting and Paragon Global Investments. Jake is also a nationally ranked debater, former team captain, and active investor with a strong interest in capital markets and Wall Street careers.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('sophia-safieddine')">
-          <img src="images/people/wsc/sophia-safieddine.jpg" alt="Sofia Safieddine" class="member-pic" />
-          <p class="member-name">Sofia Safieddine</p>
-          <p class="member-role">VP of Finance &amp; Education</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/sophia-safieddine.jpg" alt="Sofia Safieddine" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Sofia Safieddine</p>
+                <p class="member-role">VP of Finance &amp; Education</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">VP of Finance &amp; Education</p>
+              <p class="back-name">Sofia Safieddine</p>
+              <p class="back-bio">Sofia serves as VP of Finance &amp; Education, overseeing financial planning and educational initiatives across all club divisions.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('coco-you')">
-          <img src="images/people/wsc/coco-you.jpg" alt="Coco You" class="member-pic" />
-          <p class="member-name">Coco You</p>
-          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/coco-you.jpg" alt="Coco You" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Coco You</p>
+                <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Education &amp; Mentorship</p>
+              <p class="back-name">Coco You</p>
+              <p class="back-bio">Coco serves as Co-VP of Education &amp; Mentorship, co-leading educational programming and the Interview Preparation Mentorship program.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('dylan-gutowski')">
-          <img src="images/people/wsc/dylan-gutowski.jpg" alt="Dylan Gutowski" class="member-pic" />
-          <p class="member-name">Dylan Gutowski</p>
-          <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/dylan-gutowski.jpg" alt="Dylan Gutowski" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Dylan Gutowski</p>
+                <p class="member-role">Co-VP of Education &amp; Mentorship</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Education &amp; Mentorship</p>
+              <p class="back-name">Dylan Gutowski</p>
+              <p class="back-bio">Dylan serves as Co-VP of Education &amp; Mentorship, overseeing the Wall Street Mentorship program and driving member development initiatives.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('koorosh-heidari')">
-          <img src="images/people/wsc/koorosh-heidari.jpg" alt="Koorosh Heidari" class="member-pic" />
-          <p class="member-name">Koorosh Heidari</p>
-          <p class="member-role">VP of Finance</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/koorosh-heidari.jpg" alt="Koorosh Heidari" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Koorosh Heidari</p>
+                <p class="member-role">VP of Finance</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">VP of Finance</p>
+              <p class="back-name">Koorosh Heidari</p>
+              <p class="back-bio">Koorosh serves as VP of Finance, handling the club's budget, financial planning, and funding operations across all WSC divisions.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('aleksandra-rombakh')">
-          <img src="images/people/wsc/aleksandra-rombakh.jpg" alt="Aleksandra Rombakh" class="member-pic" />
-          <p class="member-name">Aleksandra Rombakh</p>
-          <p class="member-role">VP of Investment Fund</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/aleksandra-rombakh.jpg" alt="Aleksandra Rombakh" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Aleksandra Rombakh</p>
+                <p class="member-role">VP of Investment Fund</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">VP of Investment Fund</p>
+              <p class="back-name">Aleksandra Rombakh</p>
+              <p class="back-bio">Aleksandra serves as VP of Investment Fund, managing WSC's investment fund and overseeing portfolio strategy and fund operations.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('tahmid-ahmed')">
-          <img src="images/people/wsc/tahmid-ahmed.jpg" alt="Tahmid Ahmed" class="member-pic" />
-          <p class="member-name">Tahmid Ahmed</p>
-          <p class="member-role">VP of Alumni &amp; Industry Relations</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/tahmid-ahmed.jpg" alt="Tahmid Ahmed" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Tahmid Ahmed</p>
+                <p class="member-role">VP of Alumni &amp; Industry Relations</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">VP of Alumni &amp; Industry Relations</p>
+              <p class="back-name">Tahmid Ahmed</p>
+              <p class="back-bio">Tahmid serves as VP of Alumni &amp; Industry Relations, building and maintaining relationships with WSC alumni and finance professionals.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('morgan-valia-peters')">
-          <img src="images/people/wsc/morgan-valia-peters.jpg" alt="Morgan Valia-Peters" class="member-pic" />
-          <p class="member-name">Morgan Valia-Peters</p>
-          <p class="member-role">VP of Events &amp; Logistics</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/morgan-valia-peters.jpg" alt="Morgan Valia-Peters" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Morgan Valia-Peters</p>
+                <p class="member-role">VP of Events &amp; Logistics</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">VP of Events &amp; Logistics</p>
+              <p class="back-name">Morgan Valia-Peters</p>
+              <p class="back-bio">Morgan serves as VP of Events &amp; Logistics, planning and coordinating all club events, speaker sessions, and the annual NYC trip.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('sofiia-rosinska')">
-          <img src="images/people/wsc/sofiia-rosinska.jpg" alt="Sofiia Rosinska" class="member-pic" />
-          <p class="member-name">Sofiia Rosinska</p>
-          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/sofiia-rosinska.jpg" alt="Sofiia Rosinska" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Sofiia Rosinska</p>
+                <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Marketing &amp; Communications</p>
+              <p class="back-name">Sofiia Rosinska</p>
+              <p class="back-bio">Sofiia serves as Co-VP of Marketing &amp; Communications, managing the club's brand, social media presence, and external communications.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('michael-chen')">
-          <img src="images/people/wsc/michael-chen.jpg" alt="Michael Chen" class="member-pic" />
-          <p class="member-name">Michael Chen</p>
-          <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/michael-chen.jpg" alt="Michael Chen" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Michael Chen</p>
+                <p class="member-role">Co-VP of Marketing &amp; Communications</p>
+                <span class="flip-hint">click for bio</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-close">&times;</span>
+              <p class="back-role">Co-VP of Marketing &amp; Communications</p>
+              <p class="back-name">Michael Chen</p>
+              <p class="back-bio">Michael serves as Co-VP of Marketing &amp; Communications, collaborating on outreach strategy, content creation, and digital presence.</p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -232,53 +490,18 @@
       </div>
     </footer>
 
-    <!-- POPUP -->
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" onclick="hidePopup()">&times;</span>
-        <img id="popup-image" src="images/filler.png" alt="" class="popup-image" />
-        <h3 id="member-name"></h3>
-        <p id="member-info" class="member-info"></p>
-      </div>
-    </div>
-
     <script>
-      const memberInfo = {
-        'max-popov':          { name: 'Max Popov',           info: 'Max serves as President, overseeing all club operations, setting strategic goals, and ensuring effective leadership across all divisions.', image: 'images/people/wsc/max-popov.jpg' },
-        'max-grandov':        { name: 'Max Grandov',         info: 'Max serves as Vice President, supporting the President in coordinating leadership and ensuring all initiatives are executed effectively.', image: 'images/people/wsc/max-grandov.jpg' },
-        'aayan-shah':         { name: 'Aayan Shah',          info: 'Aayan serves as Co-VP of Recruitment, managing the recruitment pipeline and ensuring a rigorous and fair selection process.', image: 'images/people/wsc/aayan-shah.jpg' },
-        'jake-quan':          { name: 'Jake Quan',           info: 'Jake serves as Co-VP of Recruitment, working alongside Aayan to attract and onboard talented new members.', image: 'images/people/wsc/jake-quan.jpg' },
-        'sophia-safieddine':  { name: 'Sofia Safieddine',    info: 'Sofia serves as VP of Finance & Education, overseeing financial planning and educational initiatives across all club divisions.', image: 'images/people/wsc/sophia-safieddine.jpg' },
-        'coco-you':           { name: 'Coco You',            info: 'Coco serves as Co-VP of Education & Mentorship, co-leading educational programming and the Interview Preparation Mentorship.', image: 'images/people/wsc/coco-you.jpg' },
-        'dylan-gutowski':     { name: 'Dylan Gutowski',      info: 'Dylan serves as Co-VP of Education & Mentorship, overseeing the Wall Street Mentorship program and member development.', image: 'images/people/wsc/dylan-gutowski.jpg' },
-        'koorosh-heidari':    { name: 'Koorosh Heidari',     info: 'Koorosh serves as VP of Finance, handling the club\'s budget and financial planning.', image: 'images/people/wsc/koorosh-heidari.jpg' },
-        'aleksandra-rombakh': { name: 'Aleksandra Rombakh',  info: 'Aleksandra serves as VP of Investment Fund, managing WSC\'s investment fund and overseeing portfolio strategy.', image: 'images/people/wsc/aleksandra-rombakh.jpg' },
-        'tahmid-ahmed':       { name: 'Tahmid Ahmed',        info: 'Tahmid serves as VP of Alumni & Industry Relations, building and maintaining relationships with alumni and finance professionals.', image: 'images/people/wsc/tahmid-ahmed.jpg' },
-        'morgan-valia-peters':{ name: 'Morgan Valia-Peters',  info: 'Morgan serves as VP of Events & Logistics, planning and coordinating all club events, speaker sessions, and NYC trips.', image: 'images/people/wsc/morgan-valia-peters.jpg' },
-        'sofiia-rosinska':    { name: 'Sofiia Rosinska',     info: 'Sofiia serves as Co-VP of Marketing & Communications, managing the club\'s brand, social media, and external communications.', image: 'images/people/wsc/sofiia-rosinska.jpg' },
-        'michael-chen':       { name: 'Michael Chen',        info: 'Michael serves as Co-VP of Marketing & Communications, collaborating on outreach strategy and digital presence.', image: 'images/people/wsc/michael-chen.jpg' },
-      };
-
-      function showPopup(id) {
-        const m = memberInfo[id];
-        if (!m) return;
-        document.getElementById('member-name').innerText = m.name;
-        document.getElementById('member-info').innerText = m.info;
-        document.getElementById('popup-image').src = m.image;
-        document.getElementById('popup').classList.add('show');
-      }
-      function hidePopup() {
-        document.getElementById('popup').classList.remove('show');
-      }
       document.addEventListener('DOMContentLoaded', function () {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        document.querySelectorAll('.flip-card').forEach(function (card) {
+          card.addEventListener('click', function () {
+            card.classList.toggle('flipped');
+          });
         });
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-        document.addEventListener('click', function (e) {
-          const popup = document.getElementById('popup');
-          if (popup.classList.contains('show') && !document.querySelector('.popup-content').contains(e.target)) hidePopup();
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
         });
+        document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
       });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
