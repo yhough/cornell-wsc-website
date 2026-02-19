@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="colors.css" />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -71,16 +72,16 @@
       </video>
 
       <div class="content-center text-center position-absolute w-100">
-        <h2 class="sans-light fade-in">
-          Cornell's Premier Finance Organization
-        </h2>
         <h1 class="serif-regular fade-in">Cornell Wall Street Club</h1>
+        <h2 class="sans-light fade-in">
+          Empowering students through access, mentorship, and global opportunity in finance
+        </h2>
         <button
           type="button"
           id="coffeeChatButton"
           class="btn btn-outline-light btn-lg mt-4 manrope-light fade-in"
         >
-          Request Coffee Chat
+          Learn More
         </button>
       </div>
 
@@ -97,10 +98,11 @@
           <h2 class="mb-4 serif-regular">About Us</h2>
           <div class="sans-serif-light">
             <p>
-              The Cornell Portfolio Management Club (CPMC) is a student-led
-              organization dedicated to providing members with a comprehensive
-              understanding of investment strategies, portfolio management, and
-              the financial markets.
+              The Cornell Wall Street Club (WSC) is a student-led organization
+              dedicated to accelerating careers in finance through structured
+              preparation, mentorship, and strategic resources. We empower
+              members to enter competitive financial sectors and build lasting
+              professional networks.
             </p>
           </div>
         </div>
@@ -109,10 +111,11 @@
           <h2 class="mb-4 serif-regular">Our Mission</h2>
           <div class="sans-serif-light">
             <p>
-              Our mission is to equip students with practical investment
-              knowledge and hands-on experience. We bridge the gap between
-              academic theory and professional practice, preparing members for
-              successful careers in finance.
+              Our mission is to equip students with the expertise, connections,
+              and confidence to succeed in finance recruiting and beyond. We
+              bridge the gap between campus and Wall Street, giving every member
+              the tools to thrive in investment banking, markets, and other
+              competitive financial careers.
             </p>
           </div>
         </div>
@@ -121,66 +124,83 @@
 
     <!-- WHAT WE OFFER SECTION -->
     <section id="what-we-offer" class="text-center">
-      <h2 class="serif-regular mb-5 fade-in">What We Offer</h2>
+      <h2 class="serif-regular mb-5 fade-in">What We Do</h2>
       <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-6 fade-in">
-          <i class="fas fa-money-bill fa-4x mb-4"></i>
-          <h3 class="mb-2 serif-regular">Investment Education</h3>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <img class="card-img" src="images/card-mentorship.png" alt="Mentorship Education" />
+          <h3 class="mb-2 serif-regular">Mentorship Education</h3>
           <div class="sans-serif-light">
             <p>
-              We provide in-depth educational resources and workshops focused on
-              investment strategies, financial analysis, and portfolio
-              management. Our goal is to equip our members with the tools they
-              need to make informed investment decisions.
+              Each new member completes our Wall Street and Interview
+              Preparation mentorships to develop technical expertise and career
+              readiness.
             </p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-6 fade-in">
-          <i class="fas fa-briefcase fa-4x mb-4"></i>
-          <h3 class="mb-2 serif-regular">Portfolio Management Experience</h3>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <img class="card-img" src="images/card-networking.png" alt="Networking & Opportunities" />
+          <h3 class="mb-2 serif-regular">Networking &amp; Opportunities</h3>
           <div class="sans-serif-light">
             <p>
-              Through hands-on projects and real-world simulations, we give our
-              members the opportunity to manage actual portfolios. This
-              experience allows students to apply what they have learned in a
-              practical and impactful way.
+              WSC empowers members to build lasting professional relationships
+              and pursue high-impact career opportunities across the finance
+              industry.
             </p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-6 fade-in">
-          <i class="fas fa-globe fa-4x mb-4"></i>
-          <h3 class="mb-2 serif-regular">Networking Opportunities</h3>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <img class="card-img" src="images/card-speaker.png" alt="Speaker Series" />
+          <h3 class="mb-2 serif-regular">Speaker Series</h3>
           <div class="sans-serif-light">
             <p>
-              We host events such as speaker sessions, networking mixers, and
-              career panels where students can meet professionals in the finance
-              industry. These events allow our members to connect with top
-              executives, financial analysts, and recruiters from prestigious
-              firms.
+              Our Speaker Series features accomplished leaders from top firms
+              who share real-world insights on finance, careers, and markets.
             </p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-6 fade-in">
-          <i class="fas fa-file-alt fa-4x mb-4"></i>
-          <h3 class="mb-2 serif-regular">
-            Resume Building & Career Development
-          </h3>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <img class="card-img" src="images/card-nyctrip.png" alt="NYC Trips" />
+          <h3 class="mb-2 serif-regular">NYC Trips</h3>
           <div class="sans-serif-light">
             <p>
-              We offer resume workshops, mock interviews, and career development
-              sessions tailored to those pursuing careers in finance. We help
-              our members refine their resumes, improve interview skills, and
-              increase their job prospects in finance.
+              We host exclusive visits to New York's leading financial
+              institutions, providing firsthand insight into Wall Street's
+              culture while fostering connections with alumni and peer chapters
+              across universities.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="text-center">
+      <div class="contact-inner">
+        <h2 class="serif-regular fade-in">Contact Us</h2>
+        <p class="sans-light fade-in">Have questions or want to learn more? Reach out to us.</p>
+        <form class="contact-form fade-in" onsubmit="return false;">
+          <div class="contact-row">
+            <input type="text" placeholder="First Name" class="sans-regular" />
+            <input type="text" placeholder="Last Name" class="sans-regular" />
+          </div>
+          <input type="email" placeholder="Email Address" class="sans-regular" />
+          <textarea placeholder="Message" rows="5" class="sans-regular"></textarea>
+          <button type="submit" class="sans-regular">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TEAM PHOTO -->
+    <div id="team-photo-wrapper">
+      <section id="team-photo" class="fade-in">
+        <img src="images/team-photo.jpg" alt="Cornell Wall Street Club team photo" />
+      </section>
+    </div>
+
     <!-- FOOTER WITH PARTICLES -->
     <footer class="sans-regular">
       <div class="footer-content fade-in">
-        <p>&copy; 2024 Cornell Portfolio Management Club</p>
+        <p>&copy; 2026 Cornell Wall Street Club</p>
         <p>
           This organization is a registered student organization of Cornell
           University
@@ -189,14 +209,14 @@
         <!-- Social Media Links -->
         <div class="social-icons">
           <a
-            href="https://www.instagram.com/cornellportfoliomanagementclub/"
+            href="https://www.instagram.com/cornellwsc/"
             target="_blank"
             aria-label="Instagram"
           >
             <i class="fab fa-instagram"></i>
           </a>
           <a
-            href="https://www.linkedin.com/company/cornell-portfolio-management-club/"
+            href="https://www.linkedin.com/company/111008953/"
             target="_blank"
             aria-label="LinkedIn"
           >
@@ -222,6 +242,7 @@
         });
       });
     </script>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
