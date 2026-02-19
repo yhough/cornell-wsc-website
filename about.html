@@ -39,93 +39,125 @@
 
       /* WHAT IS WSC */
       #what-is-wsc {
-        padding: 5rem 2rem;
+        padding: 6rem 2rem;
         background-color: var(--color-white);
         color: var(--color-black);
       }
 
       #what-is-wsc .section-inner {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
-        text-align: center;
-      }
-
-      #what-is-wsc h2 {
-        font-size: 2.2rem;
-        color: var(--color-red);
-        margin-bottom: 3rem;
-      }
-
-      .pillars {
         display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
+        gap: 5rem;
+        align-items: flex-start;
       }
 
-      .pillar {
-        flex: 1 1 200px;
-        max-width: 260px;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        border: 0.09rem solid var(--color-red);
-        border-radius: 16px;
-        transition: box-shadow 0.3s ease;
+      .wsc-intro {
+        flex: 1 1 340px;
       }
 
-      .pillar:hover {
-        box-shadow: 0 0 1.5rem var(--color-red);
-      }
-
-      .pillar i {
-        color: var(--color-red);
-        margin-bottom: 1rem;
-      }
-
-      .pillar h3 {
-        font-size: 1rem;
-        font-family: 'Baskerville', serif;
-        font-style: italic;
-        margin-bottom: 0.5rem;
-        color: var(--color-black);
-      }
-
-      .pillar p {
-        font-size: 0.9rem;
-        line-height: 1.7;
+      .wsc-intro .eyebrow {
         font-family: 'Manrope', sans-serif;
         font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.75rem;
+      }
+
+      .wsc-intro h2 {
+        font-size: 2.4rem;
         color: var(--color-black);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .wsc-intro p {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.9;
+        color: var(--color-black);
+        opacity: 0.75;
+      }
+
+      .wsc-pillars {
+        flex: 1 1 340px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .wsc-pillar {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+      }
+
+      .wsc-pillar i {
+        color: var(--color-red);
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      .wsc-pillar h3 {
+        font-family: 'Baskerville', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--color-black);
+        margin: 0 0 0.3rem;
+      }
+
+      .wsc-pillar p {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--color-black);
+        opacity: 0.7;
         margin: 0;
       }
 
       /* MENTORSHIP PROGRAMS */
       #mentorship {
-        padding: 5rem 2rem;
+        padding: 6rem 2rem;
         background-color: var(--color-black);
         color: var(--color-white);
       }
 
       #mentorship .section-inner {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
       }
 
+      #mentorship .section-header {
+        margin-bottom: 4rem;
+      }
+
+      #mentorship .eyebrow {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.75rem;
+      }
+
       #mentorship h2 {
-        font-size: 2.2rem;
-        text-align: center;
+        font-size: 2.4rem;
         color: var(--color-white);
         margin-bottom: 0.75rem;
       }
 
-      #mentorship .section-subtitle {
-        text-align: center;
+      #mentorship .section-header p {
         font-family: 'Manrope', sans-serif;
         font-weight: 300;
         font-size: 1rem;
-        opacity: 0.7;
-        letter-spacing: 0.04em;
-        margin-bottom: 3.5rem;
+        line-height: 1.9;
+        opacity: 0.6;
+        max-width: 560px;
       }
 
       .program-cards {
@@ -137,7 +169,7 @@
 
       .program-card {
         flex: 1 1 380px;
-        max-width: 420px;
+        max-width: 440px;
         background-color: rgba(255, 250, 250, 0.05);
         border: 0.09rem solid rgba(255, 250, 250, 0.15);
         border-radius: 16px;
@@ -162,7 +194,7 @@
         font-weight: 300;
         font-size: 0.95rem;
         line-height: 1.8;
-        opacity: 0.85;
+        opacity: 0.75;
         margin-bottom: 1.5rem;
       }
 
@@ -176,7 +208,7 @@
         font-family: 'Manrope', sans-serif;
         font-size: 0.9rem;
         font-weight: 300;
-        opacity: 0.8;
+        opacity: 0.7;
         padding: 0.35rem 0;
         border-bottom: 0.09rem solid rgba(255, 250, 250, 0.08);
         letter-spacing: 0.02em;
@@ -193,7 +225,9 @@
 
       @media (max-width: 768px) {
         .about-hero h1 { font-size: 2.5rem; }
-        .pillars, .program-cards { flex-direction: column; align-items: center; }
+        #what-is-wsc .section-inner { flex-direction: column; gap: 3rem; }
+        .program { flex-direction: column; gap: 1.5rem; }
+        .program-label { flex: none; }
       }
     </style>
   </head>
@@ -252,27 +286,43 @@
     <!-- WHAT IS WSC -->
     <section id="what-is-wsc">
       <div class="section-inner">
-        <h2 class="serif-regular fade-in">What is WSC?</h2>
-        <div class="pillars">
-          <div class="pillar fade-in">
-            <i class="fas fa-rocket fa-3x"></i>
-            <h3>Accelerating Careers in Finance</h3>
-            <p>WSC empowers members to enter competitive financial sectors through structured preparation and strategic resources.</p>
+        <div class="wsc-intro fade-in">
+          <p class="eyebrow">Who we are</p>
+          <h2 class="serif-regular">Cornell Wall Street Club</h2>
+          <p>
+            WSC is Cornell's premier finance club, dedicated to accelerating members' careers through structured
+            education, mentorship, and direct access to the financial industry. We bring together ambitious students
+            and connect them with the people, knowledge, and opportunities needed to break into Wall Street.
+          </p>
+        </div>
+        <div class="wsc-pillars">
+          <div class="wsc-pillar fade-in">
+            <i class="fas fa-rocket fa-lg"></i>
+            <div>
+              <h3>Accelerating Careers</h3>
+              <p>Structured preparation and strategic resources to help members land roles in competitive financial sectors.</p>
+            </div>
           </div>
-          <div class="pillar fade-in">
-            <i class="fas fa-globe fa-3x"></i>
-            <h3>Expansive Professional Network</h3>
-            <p>Members gain access to a global community of industry leaders, alumni, and top-tier financial institutions.</p>
+          <div class="wsc-pillar fade-in">
+            <i class="fas fa-globe fa-lg"></i>
+            <div>
+              <h3>Expansive Network</h3>
+              <p>Access to a global community of industry leaders, alumni, and top-tier financial institutions.</p>
+            </div>
           </div>
-          <div class="pillar fade-in">
-            <i class="fas fa-user-graduate fa-3x"></i>
-            <h3>Targeted Mentorship &amp; Career Development</h3>
-            <p>Personalized mentorship and skill-building initiatives equip members with the expertise to excel in recruiting and beyond.</p>
+          <div class="wsc-pillar fade-in">
+            <i class="fas fa-user-graduate fa-lg"></i>
+            <div>
+              <h3>Targeted Mentorship</h3>
+              <p>Personalized mentorship and skill-building to excel in recruiting and long-term career development.</p>
+            </div>
           </div>
-          <div class="pillar fade-in">
-            <i class="fas fa-briefcase fa-3x"></i>
-            <h3>Exclusive Industry Access</h3>
-            <p>Through workshops, speaker panels, and firm partnerships, members engage directly with top finance professionals.</p>
+          <div class="wsc-pillar fade-in">
+            <i class="fas fa-briefcase fa-lg"></i>
+            <div>
+              <h3>Industry Access</h3>
+              <p>Workshops, speaker panels, and firm partnerships that put members in direct contact with finance professionals.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -281,21 +331,22 @@
     <!-- MENTORSHIP PROGRAMS -->
     <section id="mentorship">
       <div class="section-inner">
-        <h2 class="serif-regular fade-in">Mentorship Programs</h2>
-        <p class="section-subtitle sans-light fade-in">
-          WSC offers two signature mentorship programs designed to prepare members for success in finance.
-        </p>
+        <div class="section-header fade-in">
+          <p class="eyebrow">Education</p>
+          <h2 class="serif-regular">Mentorship Programs</h2>
+          <p>Two signature programs designed to take members from fundamentals to offer.</p>
+        </div>
         <div class="program-cards">
           <div class="program-card fade-in">
             <h3>Wall Street Mentorship</h3>
             <p>
-              Our Wall Street Mentorship Program provides members with a rigorous, end-to-end foundation in finance fundamentals,
-              valuation, and core deal processes — translating theory into practical, interview-ready skill sets. Delivered through
-              weekly workshops, case studies, and technical training led by experienced mentors and alumni.
+              A rigorous, end-to-end foundation in finance fundamentals, valuation, and core deal processes —
+              translating theory into practical, interview-ready skill sets through weekly workshops, case studies,
+              and training led by experienced mentors and alumni.
             </p>
             <ul>
-              <li>Core Financial and Valuation Concepts</li>
-              <li>Valuation &amp; Financial Modeling Essentials</li>
+              <li>Core Financial &amp; Valuation Concepts</li>
+              <li>Financial Modeling Essentials</li>
               <li>Industry Applications</li>
               <li>Accounting &amp; Financial Statement Analysis</li>
               <li>Leveraged Buyouts (LBOs)</li>
@@ -305,14 +356,13 @@
           <div class="program-card fade-in">
             <h3>Interview Preparation Mentorship</h3>
             <p>
-              The Interview Preparation Mentorship helps members develop the communication, problem-solving, and analytical skills
-              essential for finance recruiting. Participants receive one-on-one feedback, mock interview sessions, and exposure
-              to real interview formats used by leading firms.
+              Develops the communication, problem-solving, and analytical skills essential for finance recruiting.
+              Members receive one-on-one feedback, mock interview sessions, and exposure to real formats used by leading firms.
             </p>
             <ul>
               <li>Professional Development &amp; Recruiting Strategy</li>
-              <li>Behavioral and Fit Interview Training</li>
-              <li>Projects, Practice and Peer Development</li>
+              <li>Behavioral &amp; Fit Interview Training</li>
+              <li>Projects, Practice &amp; Peer Development</li>
             </ul>
           </div>
         </div>
