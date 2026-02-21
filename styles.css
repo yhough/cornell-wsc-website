@@ -154,10 +154,44 @@ h1 {
   color: var(--color-red) !important;
 }
 
+/* Dropdown show on hover (desktop only) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block !important;
+  }
+}
+
+/* Match Our Team underline to other tabs - override Bootstrap's thick caret */
+.navbar-nav .nav-item.dropdown .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.09em;
+  background-color: var(--color-red);
+  transform: translate3d(-110%, 0, 0);
+  transition: transform 300ms;
+  /* Override Bootstrap dropdown caret */
+  display: block !important;
+  margin: 0;
+  vertical-align: unset;
+  border: none !important;
+}
+
+/* Keep underline visible when dropdown (including menu) is hovered */
+.navbar .dropdown:hover .nav-link::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.navbar-nav .nav-item.dropdown .nav-link {
+  border: none;
+}
+
 /* VIDEO! */
 .video-background {
   position: relative;
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   background-size: cover;
@@ -197,8 +231,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  /* Adjust the opacity as needed */
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
