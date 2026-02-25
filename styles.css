@@ -141,6 +141,16 @@ h1 {
   min-width: 160px;
 }
 
+/* Invisible bridge so cursor can move from tab to menu without dropdown closing */
+.navbar .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .dropdown-item {
   color: var(--color-white) !important;
   font-size: 0.9rem;
@@ -245,7 +255,10 @@ h1 {
 }
 
 .content-center h2 {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  margin-top: 1.5rem;
   margin-bottom: 10px;
   letter-spacing: 0.1em;
   text-shadow: 4px 4px 10px var(--text-color);
@@ -253,6 +266,10 @@ h1 {
 
 .content-center h1 {
   font-size: 4rem;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--background-color);
   text-shadow: 4px 4px 35px var(--text-color);
 }
@@ -391,8 +408,8 @@ h1 {
 
 #what-we-offer h2 {
   margin: 3rem 0;
-  font-size: 3rem;
-  font-style: italic;
+  font-size: 2.5rem;
+  font-style: normal;
   color: var(--color-white);
 }
 
@@ -613,7 +630,6 @@ h1 {
 #team-photo {
   width: 100%;
   line-height: 0;
-  clip-path: polygon(0 6vw, 50% 0, 100% 6vw, 100% calc(100% - 6vw), 50% 100%, 0 calc(100% - 6vw));
   margin: -1px 0;
 }
 
@@ -730,6 +746,16 @@ footer {
   z-index: 2;
   margin: 0;
   padding: 0;
+}
+
+.footer-content a {
+  color: var(--background-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: var(--mid-color);
 }
 
 /* Social Icons Styling */
@@ -1031,7 +1057,7 @@ nav.quant-navbar .custom-toggler .navbar-toggler-icon {
   }
 
   .content-center h2 {
-    font-size: 1.5rem;
+    display: none;
   }
 
   .navbar-nav .nav-item {
@@ -1055,14 +1081,33 @@ nav.quant-navbar .custom-toggler .navbar-toggler-icon {
     background-color: var(--color-red);
     transform: translateX(-50%);
     transition: width 300ms ease;
+    right: auto;
   }
 
   .navbar-nav .nav-link:hover::after,
   .navbar-nav .nav-link:focus::after {
     width: 30%;
-    /* Expand halfway to the left and right */
+    left: 50%;
+    right: auto;
     transform: translateX(-50%);
-    /* Keep it centered */
+  }
+
+  /* Override dropdown underline in compressed view - use centered style */
+  .navbar-nav .nav-item.dropdown .nav-link::after {
+    left: 50%;
+    right: auto;
+    width: 0;
+    transform: translateX(-50%);
+    transition: width 300ms ease;
+  }
+
+  .navbar .dropdown:hover .nav-link::after,
+  .navbar-nav .nav-item.dropdown .nav-link:hover::after,
+  .navbar-nav .nav-item.dropdown .nav-link:focus::after {
+    width: 30%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 }
 
