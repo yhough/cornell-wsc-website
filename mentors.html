@@ -55,46 +55,143 @@
         padding: 0 2.5rem;
       }
 
-      .member-card {
+      /* FLIP CARD */
+      .flip-card {
+        width: 248px;
+        height: 420px;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .flip-card-front {
+        background-color: var(--color-black);
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        cursor: pointer;
-        width: 248px;
-        transition: transform 0.2s ease;
       }
-      .member-card:hover { transform: translateY(-5px); }
-      .member-card:hover .member-pic { box-shadow: 0 0 1.5rem var(--color-red); }
 
-      .member-pic {
+      .flip-card-front img {
         width: 248px;
         height: 330px;
         object-fit: cover;
         object-position: top;
-        border-radius: 8px;
-        margin-bottom: 0.75rem;
+        border-radius: 10px 10px 0 0;
         transition: box-shadow 0.3s ease;
+        display: block;
       }
 
-      .member-name {
+      .flip-card:hover .flip-card-front img {
+        box-shadow: 0 0 1.5rem var(--color-red);
+      }
+
+      .flip-card-front-text {
+        width: 100%;
+        padding: 0.75rem 0.5rem 0.5rem;
+        text-align: center;
+      }
+
+      .flip-card-front-text .member-name {
         font-family: 'Baskerville', serif;
         font-style: italic;
         font-size: 1.05rem;
         color: var(--color-white);
-        margin: 0 0 0.25rem;
-      }
-      .member-role {
-        font-family: 'Manrope', sans-serif;
-        font-weight: 300;
-        font-size: 0.75rem;
-        color: var(--color-red);
-        letter-spacing: 0.03em;
+        margin: 0 0 0.2rem;
       }
 
-      .popup-content { background-color: #1a1a1a; color: var(--color-white); border: 0.09rem solid rgba(255,250,250,0.1); }
-      .popup-content h3 { color: var(--color-white); }
-      .close-btn { color: var(--color-white); }
+      .flip-card-front-text .member-role {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.72rem;
+        color: var(--color-red);
+        letter-spacing: 0.03em;
+        line-height: 1.4;
+        margin: 0 0 0.5rem;
+      }
+
+      .flip-card-back {
+        background-color: #181818;
+        border: 0.09rem solid rgba(255, 250, 250, 0.1);
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.75rem 1.5rem 1.25rem;
+        text-align: left;
+        overflow: hidden;
+      }
+
+      .flip-card-back .back-role {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-red);
+        margin-bottom: 0.4rem;
+      }
+
+      .flip-card-back .back-name {
+        font-family: 'Baskerville', serif;
+        font-size: 1.2rem;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .flip-card-back .back-bio {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.78rem;
+        line-height: 1.75;
+        color: rgba(255, 250, 250, 0.65);
+        margin: 0;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .flip-card-back .back-bio::-webkit-scrollbar-thumb {
+        background-color: var(--color-red);
+        border-radius: 3px;
+      }
+
+      .flip-card-back .back-bio a {
+        color: var(--color-red);
+        text-decoration: none;
+      }
+      .flip-card-back .back-bio a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -133,22 +230,55 @@
     <section id="mentors-section">
       <div class="member-grid">
 
-        <div class="member-card fade-in" onclick="showPopup('thulasi-vithiyashankar')">
-          <img src="images/people/wsc/joseph-sciarrone.jpg" alt="Thulasi Vithiyashankar" class="member-pic" />
-          <p class="member-name">Thulasi Vithiyashankar</p>
-          <p class="member-role">Mentor</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/joseph-sciarrone.jpg" alt="Thulasi Vithiyashankar" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Thulasi Vithiyashankar</p>
+                <p class="member-role">Mentor</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="back-role">Mentor</p>
+              <p class="back-name">Thulasi Vithiyashankar</p>
+              <p class="back-bio">Thulasi is a mentor for the Wall Street Club, supporting members with finance fundamentals and professional development.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('joseph-sciarrone')">
-          <img src="images/people/wsc/alexa-friesel.jpg" alt="Joseph Sciarrone" class="member-pic" />
-          <p class="member-name">Joseph Sciarrone</p>
-          <p class="member-role">Mentor</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/alexa-friesel.jpg" alt="Joseph Sciarrone" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Joseph Sciarrone</p>
+                <p class="member-role">Mentor</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="back-role">Mentor</p>
+              <p class="back-name">Joseph Sciarrone</p>
+              <p class="back-bio">Joseph is a mentor for the Wall Street Club, guiding members through technical finance concepts and career development.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="member-card fade-in" onclick="showPopup('alexa-friesel')">
-          <img src="images/people/wsc/thulasi-vithiyashankar.jpg" alt="Alexa Friesel" class="member-pic" />
-          <p class="member-name">Alexa Friesel</p>
-          <p class="member-role">Mentor</p>
+        <div class="flip-card fade-in">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/people/wsc/thulasi-vithiyashankar.jpg" alt="Alexa Friesel" />
+              <div class="flip-card-front-text">
+                <p class="member-name">Alexa Friesel</p>
+                <p class="member-role">Mentor</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="back-role">Mentor</p>
+              <p class="back-name">Alexa Friesel</p>
+              <p class="back-bio">Lexi Friesel is a junior from Atherton, California, majoring in Economics with a minor in Business at Cornell University. On campus, she is a member of the NCAA Women's Polo Team, Senior Advisor for the Society for Women in Business, a Big Red Ambassador for Admissions, a contributor to the Big Red Sports Network, and a photographer for the Cornell Football Team.<br><br>Lexi previously interned at Oak Hill Advisors in Private Credit and at Searchlight Capital Partners in Private Equity. This summer, she will be an Investment Banking Summer Analyst at Evercore.<br><br>In her free time, Lexi enjoys lifting weights, pilates, skiing, watching sports, listening to music, traveling the world, and exploring new restaurants. She can be reached at <a href="mailto:ahf58@cornell.edu">ahf58@cornell.edu</a></p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -169,40 +299,14 @@
       </div>
     </footer>
 
-    <!-- POPUP -->
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" onclick="hidePopup()">&times;</span>
-        <img id="popup-image" src="images/filler.png" alt="" class="popup-image" />
-        <h3 id="member-name"></h3>
-        <p id="member-info" class="member-info"></p>
-      </div>
-    </div>
-
     <script>
-      const memberInfo = {
-        'joseph-sciarrone':       { name: 'Joseph Sciarrone',       info: 'Joseph is a mentor for the Wall Street Club, guiding members through technical finance concepts and career development.', image: 'images/people/wsc/joseph-sciarrone.jpg' },
-        'alexa-friesel':          { name: 'Alexa Friesel',          info: 'Alexa is a mentor for the Wall Street Club, providing guidance on recruiting strategy and interview preparation.', image: 'images/people/wsc/alexa-friesel.jpg' },
-        'thulasi-vithiyashankar': { name: 'Thulasi Vithiyashankar', info: 'Thulasi is a mentor for the Wall Street Club, supporting members with finance fundamentals and professional development.', image: 'images/people/wsc/thulasi-vithiyashankar.jpg' },
-      };
-
-      function showPopup(id) {
-        const m = memberInfo[id];
-        if (!m) return;
-        document.getElementById('member-name').innerText = m.name;
-        document.getElementById('member-info').innerText = m.info;
-        document.getElementById('popup-image').src = m.image;
-        document.getElementById('popup').classList.add('show');
-      }
-      function hidePopup() { document.getElementById('popup').classList.remove('show'); }
       document.addEventListener('DOMContentLoaded', function () {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
         });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-        document.addEventListener('click', function (e) {
-          const popup = document.getElementById('popup');
-          if (popup.classList.contains('show') && !document.querySelector('.popup-content').contains(e.target)) hidePopup();
+        document.querySelectorAll('.flip-card').forEach((card) => {
+          card.addEventListener('click', () => card.classList.toggle('flipped'));
         });
       });
     </script>
